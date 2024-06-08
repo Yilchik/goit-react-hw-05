@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import css from "./MovieList.module.css";
+import css from "./App.css";
 
 const MovieList = ({ movies }) => (
   <ul className={css.list}>
