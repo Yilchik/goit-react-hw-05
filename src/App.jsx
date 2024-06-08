@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import { useEffect } from "react";
 import { getMoviesApi } from "./movies-api";
+import { NavLink, Route, Routes } from "react-router-dom";
+import { build } from "vite";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -48,6 +50,20 @@ function App() {
 
   return (
     <div>
+      <nav className={css.nav}>
+        <NavLink to="/" className={buildLinkClass}>
+          Home Page
+        </NavLink>
+        <NavLink to="/movies" className={buildLinkClass}>
+          Movies
+        </NavLink>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movies" element={<MoviesPage />} />
+      </Routes>
+
       <SearchBar onSubmit={handleSubmit} />
       {error && (
         <ErrorMessage message="Whoops, something went wrong! Please try reloading this page!" />
