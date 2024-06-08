@@ -1,4 +1,3 @@
-import "./App.css";
 import { NavLink, Route, Routes } from "react-router-dom";
 import HomePage from "../../pages/HomePage/HomePage";
 import css from "./App.module.css";
