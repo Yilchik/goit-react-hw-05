@@ -1,0 +1,28 @@
+.container {
+  width: auto;
+}
+
+.form {
+  padding: 8px;
+  display: flex;
+  align-items: baseline;
+}
+
+.input {
+  height: 20px;
+  border: 2px solid rgb(8, 212, 35);
+  border-radius: 2px;
+}
+
+.button {
+  background-color: rgb(168, 245, 185);
+  margin-left: 10px;
+  border: 1px solid #0d0d0e;
+}
+
+.button:hover,
+.button:focus {
+  color: rgb(8, 212, 35);
+  background-color: rgb(226, 240, 101);
+  border: 1px solid rgb(8, 212, 35);
+}
