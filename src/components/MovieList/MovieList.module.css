@@ -1,0 +1,7 @@
+.list {
+  line-height: 1.4;
+}
+
+.item:hover {
+  color: rgb(16, 167, 48);
+}
