@@ -1,15 +1,12 @@
-import { NavLink, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "../../pages/HomePage/HomePage";
 import css from "./App.module.css";
+import Navigation from "../Navigation/Navigation";
 
 function App() {
   return (
     <div>
-      <nav className={css.nav}>
-        <NavLink to="/">Home Page</NavLink>
-        <NavLink to="/movies">Movies</NavLink>
-      </nav>
-
+      <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
         {/* <Route path="/movies" element={<MoviesPage />} /> */}
