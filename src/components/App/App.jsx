@@ -2,20 +2,12 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import HomePage from "../../pages/HomePage/HomePage";
 import css from "./App.module.css";
 
-const buildLinkClass = ({ isActive }) => {
-  return clsx(css.link, isActive && css.active);
-};
-
 function App() {
   return (
     <div>
       <nav className={css.nav}>
-        <NavLink to="/" className={buildLinkClass}>
-          Home Page
-        </NavLink>
-        <NavLink to="/movies" className={buildLinkClass}>
-          Movies
-        </NavLink>
+        <NavLink to="/">Home Page</NavLink>
+        <NavLink to="/movies">Movies</NavLink>
       </nav>
 
       <Routes>
