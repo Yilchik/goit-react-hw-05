@@ -24,3 +24,12 @@ export const getMoviesByQuery = async (query) => {
   });
   return data.results;
 };
+
+export const getMovieDetails = async (id) => {
+  const { data } = await axios.get(`/movie/${id}`, {
+    headers: {
+      Authorization: `Bearer ${API_KEY}`,
+    },
+  });
+  return data;
+};
