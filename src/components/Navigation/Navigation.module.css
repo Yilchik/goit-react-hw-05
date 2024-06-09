@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 5px;
+  font-size: 24px;
+  border-bottom: 2px solid #9004ac;
+}
+
+.link {
+  color: black;
+  border: 1px solid #0d0d0e;
+  border-radius: 4px;
+  background-color: rgb(25, 233, 248);
+  padding: 5px;
+}
+
+.link:hover,
+.link:focus {
+  color: rgb(8, 21, 212);
+  background-color: rgb(226, 240, 101);
+  border: 1px solid rgb(8, 21, 212);
+}
+
+.active {
+  color: brown;
+}
