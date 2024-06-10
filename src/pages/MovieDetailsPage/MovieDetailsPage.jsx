@@ -27,10 +27,10 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={css.container}>
-      <button onClick={handleGoBack} className={css.goBackBtn}>
+      <Link onClick={handleGoBack} className={css.goBackBtn}>
         <AiOutlineRotateLeft className={css.goBackIcon} />
         Go back
-      </button>
+      </Link>
       <div className={css.movieDetail}>
         <img src={imageUrl} alt={movie.title} className={css.moviePoster} />
         <div className={css.movieInfo}>

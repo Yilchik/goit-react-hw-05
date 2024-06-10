@@ -8,8 +8,10 @@
   background-color: rgb(168, 245, 185);
   margin-left: 10px;
   border: 1px solid #0d0d0e;
-  width: 120px;
-  margin: 10px;
+  width: 100px;
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .goBackBtn:hover,
