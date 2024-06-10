@@ -30,7 +30,7 @@ const MovieDetailsPage = () => {
       <div className={css.movieDetail}>
         <img src={imageUrl} alt={movie.title} className={css.moviePoster} />
         <div className={css.movieInfo}>
-          <h1>{movie.title}</h1>
+          <h1 className={css.movieTitle}>{movie.title}</h1>
           <p>User Score: {movie.vote_average * 10}%</p>
           <h2>Overview</h2>
           <p>{movie.overview}</p>
@@ -41,12 +41,12 @@ const MovieDetailsPage = () => {
       <div className={css.additionalInfo}>
         <h2>Additional information</h2>
         <ul>
-          <li>
+          <li className={css.item}>
             <Link to="cast" className={css.link}>
               Cast
             </Link>
           </li>
-          <li>
+          <li className={css.item}>
             <Link to="reviews" className={css.link}>
               Reviews
             </Link>
