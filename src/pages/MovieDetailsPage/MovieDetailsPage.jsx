@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link, Route, Routes, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
 import css from "./MovieDetailsPage.module.css";
 import { AiOutlineRotateLeft } from "react-icons/ai";
-import MovieCast from "../../components/MovieCast/MovieCast";
-import MovieReviews from "../../components/MovieReviews/MovieReviews";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -57,10 +55,7 @@ const MovieDetailsPage = () => {
           </li>
         </ul>
       </div>
-      <Routes>
-        <Route path="cast" element={<MovieCast />} />
-        <Route path="reviews" element={<MovieReviews />} />
-      </Routes>
+      <Outlet />
     </div>
   );
 };
