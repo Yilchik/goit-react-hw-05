@@ -42,3 +42,12 @@ export const getMovieCast = async (id) => {
   });
   return data.cast;
 };
+
+export const getMovieReviews = async (id) => {
+  const { data } = await axios.get(`/movie/${id}/reviews`, {
+    headers: {
+      Authorization: `Bearer ${API_KEY}`,
+    },
+  });
+  return data.results;
+};
