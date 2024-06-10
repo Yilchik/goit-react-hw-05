@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
 import css from "./MovieDetailsPage.module.css";
+import { AiOutlineRotateLeft } from "react-icons/ai";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -25,6 +26,7 @@ const MovieDetailsPage = () => {
   return (
     <div className={css.container}>
       <button onClick={handleGoBack} className={css.goBackBtn}>
+        <AiOutlineRotateLeft className={css.goBackIcon} />
         Go back
       </button>
       <div className={css.movieDetail}>
