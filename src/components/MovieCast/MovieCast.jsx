@@ -22,7 +22,8 @@ const MovieCast = () => {
               className={css.castImage}
             />
             <p className={css.castName}>{actor.name}</p>
-            <p className={css.castCharacter}>Character: {actor.character}</p>
+            <p className={css.castCharacter}>Character:</p>
+            <p className={css.castCharacterAs}>{actor.character}</p>
           </li>
         ))}
       </ul>
