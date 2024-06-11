@@ -9,19 +9,9 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query") || "";
 
-  useEffect(() => {
-    if (query) {
-      getMoviesByQuery(query).then(setMovies);
-    }
-  }, [query]);
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const query = formData.get("query");
-    setSearchParams({ query });
-    form.reset();
+    getMoviesByQuery(query).then(setMovies);
   };
 
   return (
@@ -31,6 +21,7 @@ const MoviesPage = () => {
           type="text"
           name="query"
           defaultValue={query}
+          onChange={(e) => setSearchParams({ query: e.target.value })}
           className={css.input}
           placeholder="Search movies..."
         />
