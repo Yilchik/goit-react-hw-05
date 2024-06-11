@@ -20,7 +20,7 @@ const MoviesPage = () => {
         <input
           type="text"
           name="query"
-          defaultValue={query}
+          value={query}
           onChange={(e) => setSearchParams({ query: e.target.value })}
           className={css.input}
           placeholder="Search movies..."
