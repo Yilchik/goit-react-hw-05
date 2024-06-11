@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
 import css from "./MovieDetailsPage.module.css";
 import { AiOutlineRotateLeft } from "react-icons/ai";
@@ -7,7 +7,9 @@ import { AiOutlineRotateLeft } from "react-icons/ai";
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.state);
+  const backLinkHref = location.state ?? "/";
 
   useEffect(() => {
     getMovieDetails(movieId).then(setMovie);
@@ -17,15 +19,11 @@ const MovieDetailsPage = () => {
     return;
   }
 
-  const handleGoBack = () => {
-    navigate(-1);
-  };
-
   const imageUrl = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
 
   return (
     <div className={css.container}>
-      <Link onClick={handleGoBack} className={css.goBackBtn}>
+      <Link to={backLinkHref} className={css.goBackBtn}>
         <AiOutlineRotateLeft className={css.goBackIcon} />
         Go back
       </Link>

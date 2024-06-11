@@ -5,7 +5,6 @@ import css from "./MoviesPage.module.css";
 import { useSearchParams } from "react-router-dom";
 
 const MoviesPage = () => {
-  // const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query");
@@ -13,6 +12,7 @@ const MoviesPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     getMoviesByQuery(query).then(setMovies);
+    event.currentTarget.reset();
   };
 
   return (
