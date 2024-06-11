@@ -9,7 +9,7 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const location = useLocation();
   console.log(location.state);
-  const backLinkHref = location.state ?? "/movies";
+  const backLinkHref = location.state ?? "/";
 
   useEffect(() => {
     getMovieDetails(movieId).then(setMovie);
@@ -42,12 +42,12 @@ const MovieDetailsPage = () => {
         <h2>Additional information</h2>
         <ul>
           <li className={css.item}>
-            <Link to="cast" className={css.link}>
+            <Link to="cast" className={css.link} state={location}>
               Cast
             </Link>
           </li>
           <li className={css.item}>
-            <Link to="reviews" className={css.link}>
+            <Link to="reviews" className={css.link} state={location}>
               Reviews
             </Link>
           </li>

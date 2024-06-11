@@ -21,7 +21,7 @@ const MoviesPage = () => {
         <input
           type="text"
           value={query}
-          onChange={(e) => setSearchParams({ query: e.target.value })}
+          onChange={(e) => setSearchParams({ query: e.target.query.value })}
           className={css.input}
         />
         <button type="submit" className={css.button}>
