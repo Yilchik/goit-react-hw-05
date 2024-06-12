@@ -17,7 +17,11 @@ const MovieCast = () => {
         {cast.map((actor) => (
           <li key={actor.id} className={css.castItem}>
             <img
-              src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
+              src={
+                actor.profile_path
+                  ? `https://image.tmdb.org/t/p/w200/${actor.profile_path}`
+                  : "https://via.placeholder.com/200x300"
+              }
               alt={actor.name}
               className={css.castImage}
             />
