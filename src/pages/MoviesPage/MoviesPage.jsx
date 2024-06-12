@@ -9,9 +9,19 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query") || "";
 
+  useEffect(() => {
+    if (query) {
+      getMoviesByQuery(query).then(setMovies);
+    }
+  }, [query]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    getMoviesByQuery(query).then(setMovies);
+    const form = event.currentTarget;
+    const queryValue = form.elements.query.value.trim();
+    if (queryValue) {
+      setSearchParams({ query: queryValue });
+    }
   };
 
   return (

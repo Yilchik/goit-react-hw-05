@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { getMovieDetails } from "../../movies-api";
 import css from "./MovieDetailsPage.module.css";
@@ -9,7 +9,7 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const location = useLocation();
   console.log(location.state);
-  const backLinkHref = location.state ?? "/";
+  const backLinkHref = useRef(location.state || "/");
 
   useEffect(() => {
     getMovieDetails(movieId).then(setMovie);
@@ -23,7 +23,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={css.container}>
-      <Link to={backLinkHref} className={css.goBackBtn}>
+      <Link to={backLinkHref.current} className={css.goBackBtn}>
         <AiOutlineRotateLeft className={css.goBackIcon} />
         Go back
       </Link>
@@ -42,12 +42,16 @@ const MovieDetailsPage = () => {
         <h2>Additional information</h2>
         <ul>
           <li className={css.item}>
-            <Link to="cast" className={css.link} state={location}>
+            <Link to="cast" className={css.link} state={backLinkHref.current}>
               Cast
             </Link>
           </li>
           <li className={css.item}>
-            <Link to="reviews" className={css.link} state={location}>
+            <Link
+              to="reviews"
+              className={css.link}
+              state={backLinkHref.current}
+            >
               Reviews
             </Link>
           </li>
